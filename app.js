@@ -11,6 +11,7 @@ const morgan = require('morgan');
 // routes
 const userRouter = require('./routes/user');
 const postRouter = require('./routes/post');
+const postsRouter = require('./routes/posts');
 
 const app = express();
 
@@ -44,6 +45,7 @@ app.get('/', (req, res, next) => {
 
 app.use('/user', userRouter);
 app.use('/post', postRouter);
+app.use('/posts', postsRouter);
 
 app.listen(3085, () => {
     console.log(`백엔드 서버 ${3085} 포트에서 적용중`);
