@@ -15,12 +15,12 @@ const postsRouter = require('./routes/posts');
 
 const app = express();
 
-db.sequelize.sync();
+db.sequelize.sync({force: true});
 passportConfig();
 
 app.use(morgan('dev'));
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'http://localhost:3080',
     credentials: true
 }));
 app.use('/', express.static('uploads'));
